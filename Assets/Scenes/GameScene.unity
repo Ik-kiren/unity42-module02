@@ -933,7 +933,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -3.964, y: -2.238}
-  m_SizeDelta: {x: 0.5857, y: 0.158}
+  m_SizeDelta: {x: 0.6, y: 0.15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &336027310
 MonoBehaviour:
@@ -22088,8 +22088,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccdd73c9af82cb5a48c418f08adb9966, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  energySlider: {fileID: 336027310}
-  hpSlider: {fileID: 2126348690}
+  energySlider: {fileID: 2126348690}
+  hpSlider: {fileID: 336027310}
 --- !u!1 &482188629
 GameObject:
   m_ObjectHideFlags: 0
@@ -23388,6 +23388,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 5
   currentHP: 0
+  maxGold: 5
   currentGold: 5
   rankLostText: {fileID: 1168948838}
   rankWonText: {fileID: 2082111087}
@@ -24346,8 +24347,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.22779411, y: 0.3516212, z: 1}
-  m_Center: {x: 0.0052821934, y: -0.0056221783, z: 0}
+  m_Size: {x: 0.10664868, y: 0.01, z: 0.27826762}
+  m_Center: {x: 0.010585666, y: -0.000000018329253, z: 0.006656327}
 --- !u!114 &1075271225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27874,6 +27875,7 @@ MonoBehaviour:
   spawnTime: 2
   ennemiNumber: 10
   ennemiPower: 1
+  startSpawnTime: 0
 --- !u!212 &1887249910
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -28447,7 +28449,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -4.4487, y: -2.0226998}
-  m_SizeDelta: {x: 0.6321, y: 0.1464}
+  m_SizeDelta: {x: 0.6, y: 0.15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2126348690
 MonoBehaviour:

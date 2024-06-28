@@ -11,7 +11,8 @@ public class GameManager : MonoBehaviour
     public int maxHP = 5;
     public int currentHP;
 
-    public int currentGold = 5;
+    public int maxGold = 5;
+    public int currentGold;
 
     public TMP_Text rankLostText;
     public TMP_Text rankWonText;
@@ -19,6 +20,9 @@ public class GameManager : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject WonMenu;
     public GameObject LostMenu;
+
+    public int numbersEnnemiToSpawn = 15;
+    public int ennemiSpawned = 0;
 
     string rank = "F";
 
@@ -93,9 +97,9 @@ public class GameManager : MonoBehaviour
 
     public void WonStage()
     {
-        if (currentHP == maxHP)
+        if (currentHP == maxHP && currentGold == maxGold)
             rank = "S";
-        else if (currentHP < maxHP && currentHP > 3)
+        else if ((currentHP < maxHP && currentHP > 3) && currentGold > 0)
             rank = "A";
         else if (currentHP < 3 && currentHP > 0)
             rank = "B";
@@ -107,6 +111,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         currentHP = maxHP;
+        currentGold = maxGold;
     }
 
     void Update()

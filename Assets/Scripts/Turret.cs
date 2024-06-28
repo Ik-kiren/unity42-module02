@@ -21,7 +21,7 @@ public class Turret : MonoBehaviour
             currentTarget = GameManager.Instance.ennemies[0];
             for (int i = 0; i < GameManager.Instance.ennemies.Count; i++)
             {
-                if (Mathf.Abs(GameManager.Instance.ennemies[i].transform.position.y - gameObject.transform.position.y) < Mathf.Abs(currentTarget.transform.position.y - gameObject.transform.position.y))
+                if (Vector3.Distance(GameManager.Instance.ennemies[i].transform.position, gameObject.transform.position) < Vector3.Distance(currentTarget.transform.position, gameObject.transform.position))
                     currentTarget = GameManager.Instance.ennemies[i];
             }
 

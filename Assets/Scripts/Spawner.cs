@@ -8,9 +8,10 @@ public class Spawner : MonoBehaviour
 
     float timer = 0;
     public float spawnTime = 2;
-    public int ennemiNumber = 10;
     public float ennemiPower = 1;
-    int ennemiSpawned = 0;
+    float startSpawnTimer = 0;
+    public float startSpawnTime = 0;
+    bool startSpawnBool = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,23 +21,31 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (ennemiSpawned == ennemiNumber && GameObject.Find("Ennemi(Clone)") == null && GameManager.Instance.hasLost == false && GameManager.Instance.hasWon == false)
+        startSpawnTimer += Time.deltaTime;
+        if (startSpawnTimer >= startSpawnTime && !startSpawnBool)
         {
-            GameManager.Instance.WonStage();
+            startSpawnBool = true;
         }
-        if (ennemiSpawned < ennemiNumber)
+        if (startSpawnBool)
         {
-            timer += Time.deltaTime;
-            if (timer >= spawnTime && GameManager.Instance.gameRunning())
+            if (GameManager.Instance.ennemiSpawned == GameManager.Instance.numbersEnnemiToSpawn && GameObject.Find("Ennemi(Clone)") == null && GameManager.Instance.hasLost == false && GameManager.Instance.hasWon == false)
             {
-                GameObject clone;
-                clone = Instantiate(ennemi);
-                clone.transform.position = gameObject.transform.position;
-                clone.gameObject.GetComponent<Ennemi>().Hp *= ennemiPower;
-                clone.gameObject.GetComponent<Ennemi>().endPoint = endPoint;
-                GameManager.Instance.ennemies.Add(clone);
-                ennemiSpawned++;
-                timer = 0;
+                GameManager.Instance.WonStage();
+            }
+            if (GameManager.Instance.ennemiSpawned < GameManager.Instance.numbersEnnemiToSpawn)
+            {
+                timer += Time.deltaTime;
+                if (timer >= spawnTime && GameManager.Instance.gameRunning())
+                {
+                    GameObject clone;
+                    clone = Instantiate(ennemi);
+                    clone.transform.position = gameObject.transform.position;
+                    clone.gameObject.GetComponent<Ennemi>().Hp *= ennemiPower;
+                    clone.gameObject.GetComponent<Ennemi>().endPoint = endPoint;
+                    GameManager.Instance.ennemies.Add(clone);
+                    GameManager.Instance.ennemiSpawned++;
+                    timer = 0;
+                }
             }
         }
     }

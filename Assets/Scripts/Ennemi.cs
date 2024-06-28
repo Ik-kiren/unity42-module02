@@ -26,6 +26,7 @@ public class Ennemi : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        gameObject.transform.rotation = Quaternion.LookRotation(Vector3.forward, endPoint.transform.position - transform.position);
         gameObject.transform.position = Vector3.MoveTowards(transform.position, endPoint.transform.position, speed * Time.deltaTime);
         if (gameObject.transform.position == endPoint.transform.position)
         {
