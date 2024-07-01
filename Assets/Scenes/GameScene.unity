@@ -505,7 +505,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 190942365}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 0.003, y: 0.003, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -513,8 +513,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.006, y: 0.25200033}
-  m_SizeDelta: {x: 42.6232, y: 50}
+  m_AnchoredPosition: {x: -0.000000052153, y: 0.346}
+  m_SizeDelta: {x: 126.3, y: 99.4707}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &190942367
 MonoBehaviour:
@@ -563,14 +563,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 22
+  m_fontSizeBase: 22
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -23396,6 +23396,8 @@ MonoBehaviour:
   pauseMenu: {fileID: 947649371}
   WonMenu: {fileID: 2140924034}
   LostMenu: {fileID: 1318691703}
+  numbersEnnemiToSpawn: 15
+  ennemiSpawned: 0
   hasWon: 0
   hasLost: 0
 --- !u!4 &967081178
@@ -24314,19 +24316,19 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1075271222}
-  m_LocalRotation: {x: 0.38743514, y: 0, z: 0, w: 0.921897}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.0321}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 190942366}
   - {fileID: 2075318865}
   m_Father: {fileID: 465918972}
-  m_LocalEulerAnglesHint: {x: 45.59, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3.784, y: -2.178}
-  m_SizeDelta: {x: 0.3789, y: 0.3915}
+  m_AnchoredPosition: {x: 3.743, y: -2.1675}
+  m_SizeDelta: {x: 0.3789, y: 0.41245}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!65 &1075271224
 BoxCollider:
@@ -24871,7 +24873,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3.343, y: -2.178}
+  m_AnchoredPosition: {x: 3.262, y: -2.178}
   m_SizeDelta: {x: 0.3789, y: 0.3915}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!65 &1237682615
@@ -26650,8 +26652,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.003, y: 0.25200033}
-  m_SizeDelta: {x: 42.6232, y: 50}
+  m_AnchoredPosition: {x: -0.0000006184, y: 0.3385}
+  m_SizeDelta: {x: 126.3, y: 107.67}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1342525041
 MonoBehaviour:
@@ -26700,14 +26702,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 22
+  m_fontSizeBase: 22
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -26736,7 +26738,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -2.6624985, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -27436,8 +27438,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00000019372, y: 0.252}
-  m_SizeDelta: {x: 42.6232, y: 50}
+  m_AnchoredPosition: {x: -0.00000046194, y: 0.33849}
+  m_SizeDelta: {x: 126.3, y: 107.67}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1704455284
 MonoBehaviour:
@@ -27486,14 +27488,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 22
+  m_fontSizeBase: 22
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -27873,7 +27875,6 @@ MonoBehaviour:
   ennemi: {fileID: 7645392192902042718, guid: d47a2f90b8e2a02e88f5f1e5f03f2bec, type: 3}
   endPoint: {fileID: 62661885}
   spawnTime: 2
-  ennemiNumber: 10
   ennemiPower: 1
   startSpawnTime: 0
 --- !u!212 &1887249910

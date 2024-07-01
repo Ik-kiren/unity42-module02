@@ -14,6 +14,8 @@ public class TurretButton : MonoBehaviour, IBeginDragHandler, IEndDragHandler, I
     GameObject currentPlatform;
     Vector3 initialPos;
 
+    Vector3 initalPosText;
+
     void OnTriggerEnter(Collider col)
     {
         currentPlatform = col.gameObject;
@@ -26,20 +28,22 @@ public class TurretButton : MonoBehaviour, IBeginDragHandler, IEndDragHandler, I
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        if (Time.timeScale != 0)
+        if (Time.timeScale != 0 && GameManager.Instance.currentGold >= turretToBuild.GetComponent<Turret>().cost)
         {
             transform.GetChild(1).gameObject.SetActive(true);
             image.color = new Color(image.color.r, image.color.g, image.color.b, 0.65f);
+            gameObject.transform.GetChild(0).gameObject.transform.position = initalPosText;
         }
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        if (Time.timeScale != 0)
+        if (Time.timeScale != 0 && GameManager.Instance.currentGold >= turretToBuild.GetComponent<Turret>().cost)
         {
             Vector3 mouseVec = mainCam.ScreenToWorldPoint(Input.mousePosition);
             mouseVec.z = 0f;
             rectTransform.position = mouseVec;
+            gameObject.transform.GetChild(0).gameObject.transform.position = initalPosText;
         }
     }
 
@@ -55,11 +59,14 @@ public class TurretButton : MonoBehaviour, IBeginDragHandler, IEndDragHandler, I
             GameManager.Instance.currentGold -= turretToBuild.GetComponent<Turret>().cost;
         }
         transform.position = initialPos;
+        gameObject.transform.GetChild(0).gameObject.transform.position = initalPosText;
     }
 
     void Start()
     {
-        gameObject.transform.GetChild(0).gameObject.GetComponent<TMP_Text>().text = turretToBuild.GetComponent<Turret>().cost.ToString();
+        string tmp = "damage : " + turretToBuild.GetComponent<Turret>().damage.ToString() + "\n cost : " + turretToBuild.GetComponent<Turret>().cost.ToString() + "\n fire rate: " + turretToBuild.GetComponent<Turret>().fireRate.ToString(); 
+        gameObject.transform.GetChild(0).gameObject.GetComponent<TMP_Text>().text = tmp;
+        initalPosText = gameObject.transform.GetChild(0).gameObject.transform.position;
         initialPos = transform.position;
         rectTransform = GetComponent<RectTransform>();
         image = gameObject.GetComponent<Image>();
